@@ -2,6 +2,9 @@ const form= document.querySelector("form");
 const error= document.querySelector("span");
 let newsletter= document.querySelector(".newspaper");
 let dismiss='crop'
+
+// form for submiting the text and getting the value
+
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
     let value= form.mail.value
@@ -18,7 +21,11 @@ form.addEventListener('submit', (e)=>{
         <input type="submit" value="Dismiss message" id=${dismiss}>
        </div>
         `
+        // display the message inthe inner html
+
         newsletter.innerHTML=message;
+
+        // lets get the button from the message display
 
         let getbutton= newsletter.querySelector("#crop")
         newbutton(getbutton)
@@ -28,6 +35,7 @@ form.addEventListener('submit', (e)=>{
     }
 })
 
+// what to do when the button is clicked
 let newbutton= (click)=>{
     click.onclick=(e)=>{
         e.preventDefault()
