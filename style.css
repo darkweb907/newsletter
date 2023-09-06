@@ -1,0 +1,145 @@
+:root{
+    ---red:hsl(4, 100%, 67%);
+    ---grey:hsl(231,7%,60%);
+    ---darkGrey: hsl(234, 29%, 20%);
+    ---Charcoal: hsl(235, 18%, 26%);
+    ---white: hsl(0, 0%, 100%);
+}
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+.newspaper{
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+body{
+    background-color: var(---Charcoal);
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    font-weight: 700;
+    font-size: .6rem;
+    color: var(---Charcoal);
+    gap: 15px;
+    display: flex;
+}
+
+.container{
+    max-width: 806px;
+    margin-inline: auto;
+    padding-inline: 12px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.mobile{
+    display: none;
+}
+.card{
+    background-color: var(---white);
+    padding: 12px 12px 12px 15px;
+    border-radius: 23px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50% , 1fr));
+    grid-template-areas: "form img";
+    gap: 15px;
+    align-items: center;
+}
+.img{
+    
+    grid-area: img;
+}
+.form-aspect{
+    grid-area: form;
+}
+h1{
+    
+    color: var(---darkGrey);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+p{
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(---Charcoal);
+}
+form{
+    line-height: 0;
+   position: relative;
+}
+label{
+    color: var(---darkGrey);
+    font-weight: 700;
+    font-size: .9rem;
+}
+input{
+    width: 82%;
+    margin: 12px 0;
+    display: block;
+    padding: 14px 0;
+    border-radius: 9px;
+    text-align: center;
+    border: 1px solid var(---grey);
+    color: var(---grey);
+}
+input[type="submit"]{
+    cursor: pointer;
+    background-color: var(---darkGrey);
+    color: var(---white);
+}
+input[type="submit"]:active{
+    background-color: var(---red);
+}
+.form-aspect span{
+    color: red;
+    font-size: .7rem;
+    position: absolute;
+    right: 70px;
+    display: none;
+}
+
+
+/* submit container start here */
+
+.submit-container{
+    display: grid;
+    align-content: center;
+    background-color: var(---white);
+    max-width: 375px;
+    padding: 30px;
+    border-radius: 15px;
+}
+.submit-container h1{
+    margin-block: 12px 0px
+}
+.submit-container input[type="submit"]{
+    width: 100%;
+}
+.submit-container p{
+    font-weight: 400;
+}
+
+/* submit container start here */
+
+@media (max-width:500px) {
+    .card{
+        grid-template-areas: "img"
+         "form";
+    }
+    .mobile{
+        display: block;
+    }
+    .destop{
+        display: none;
+    }
+    input{
+        width: 100%;
+    }
+}
